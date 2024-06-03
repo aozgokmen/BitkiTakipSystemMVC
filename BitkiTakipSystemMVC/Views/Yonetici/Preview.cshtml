@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Preview";
+    Layout = "~/Views/Shared/_LayoutYonetici.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="mb-3">
+        <h3>
+            For @ViewBag.personelAd Assigned Jobs
+        </h3>
+    </div>
+    @foreach (var item in ViewBag.works)
+    {
+        <div class="card mb-3">
+            <div class="card-header bg-black text-center text-white" >
+                @item.workName
+            </div>
+            <div class="card-body">
+                <ul class"list-group list-group-flush">
+                    <li class="list-group-item">@item.workAciklama</li>
+                    <li class="list-group-item">Assigned date : @item.iletilenTarih.ToString("dd MMM yyyy hh:mm")</li>
+                    <li class="list-group-item">Completed date : @(item.yapilanTarih != null ? item.yapilanTarih.ToString("dd MMM yyyy hh:mm"): "Henüz Girilmedi") </li>
+                    <li class="list-group-item">Status : @item.Progress.progressAd</li>
+
+
+
+                </ul>
+                <form method="post" action="@Url.Action("Delete", "Yonetici", new { worksId = item.worksId })" onsubmit="return confirm('Bu işi silmek istediğinizden emin misiniz?');">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    }
+
+</div>
+

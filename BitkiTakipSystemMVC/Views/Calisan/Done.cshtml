@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Done";
+    Layout = "~/Views/Shared/_LayoutCalisan.cshtml";
+}
+
+<div class="container mt-5">
+
+    @foreach (var w in ViewBag.works)
+    {
+        using (Html.BeginForm("Done", "Calisan", FormMethod.Post))
+        {
+            <div class="card">
+                <div class="card-header text-center">
+                    @w.workName
+                </div>
+                <div class="card-body">
+                    @w.workAciklama
+                    @w.workName
+                    <input type="hidden" name="worksId" value="@w.worksId" />
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="me-2 btn btn-outline-success">Finish</button>
+                </div>
+
+            </div>
+            <br />
+        }
+    }
+</div>

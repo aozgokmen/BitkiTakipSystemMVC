@@ -1,0 +1,155 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ozgok\\source\\repos\\BitkiTakipSystemMVC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5F16C532-4458-4604-9E0E-794D1AB8F4BE}|BitkiTakipSystemMVC\\BitkiTakipSystemMVC.csproj|c:\\users\\ozgok\\source\\repos\\bitkitakipsystemmvc\\bitkitakipsystemmvc\\views\\yonetici\\assign.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5F16C532-4458-4604-9E0E-794D1AB8F4BE}|BitkiTakipSystemMVC\\BitkiTakipSystemMVC.csproj|solutionrelative:bitkitakipsystemmvc\\views\\yonetici\\assign.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F16C532-4458-4604-9E0E-794D1AB8F4BE}|BitkiTakipSystemMVC\\BitkiTakipSystemMVC.csproj|c:\\users\\ozgok\\source\\repos\\bitkitakipsystemmvc\\bitkitakipsystemmvc\\views\\shared\\_layoutcalisan.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5F16C532-4458-4604-9E0E-794D1AB8F4BE}|BitkiTakipSystemMVC\\BitkiTakipSystemMVC.csproj|solutionrelative:bitkitakipsystemmvc\\views\\shared\\_layoutcalisan.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F16C532-4458-4604-9E0E-794D1AB8F4BE}|BitkiTakipSystemMVC\\BitkiTakipSystemMVC.csproj|c:\\users\\ozgok\\source\\repos\\bitkitakipsystemmvc\\bitkitakipsystemmvc\\views\\shared\\_layoutyonetici.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5F16C532-4458-4604-9E0E-794D1AB8F4BE}|BitkiTakipSystemMVC\\BitkiTakipSystemMVC.csproj|solutionrelative:bitkitakipsystemmvc\\views\\shared\\_layoutyonetici.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F16C532-4458-4604-9E0E-794D1AB8F4BE}|BitkiTakipSystemMVC\\BitkiTakipSystemMVC.csproj|c:\\users\\ozgok\\source\\repos\\bitkitakipsystemmvc\\bitkitakipsystemmvc\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F16C532-4458-4604-9E0E-794D1AB8F4BE}|BitkiTakipSystemMVC\\BitkiTakipSystemMVC.csproj|solutionrelative:bitkitakipsystemmvc\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F16C532-4458-4604-9E0E-794D1AB8F4BE}|BitkiTakipSystemMVC\\BitkiTakipSystemMVC.csproj|c:\\users\\ozgok\\source\\repos\\bitkitakipsystemmvc\\bitkitakipsystemmvc\\controllers\\yoneticicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F16C532-4458-4604-9E0E-794D1AB8F4BE}|BitkiTakipSystemMVC\\BitkiTakipSystemMVC.csproj|solutionrelative:bitkitakipsystemmvc\\controllers\\yoneticicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F16C532-4458-4604-9E0E-794D1AB8F4BE}|BitkiTakipSystemMVC\\BitkiTakipSystemMVC.csproj|c:\\users\\ozgok\\source\\repos\\bitkitakipsystemmvc\\bitkitakipsystemmvc\\controllers\\calisancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F16C532-4458-4604-9E0E-794D1AB8F4BE}|BitkiTakipSystemMVC\\BitkiTakipSystemMVC.csproj|solutionrelative:bitkitakipsystemmvc\\controllers\\calisancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F16C532-4458-4604-9E0E-794D1AB8F4BE}|BitkiTakipSystemMVC\\BitkiTakipSystemMVC.csproj|c:\\users\\ozgok\\source\\repos\\bitkitakipsystemmvc\\bitkitakipsystemmvc\\views\\yonetici\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5F16C532-4458-4604-9E0E-794D1AB8F4BE}|BitkiTakipSystemMVC\\BitkiTakipSystemMVC.csproj|solutionrelative:bitkitakipsystemmvc\\views\\yonetici\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F16C532-4458-4604-9E0E-794D1AB8F4BE}|BitkiTakipSystemMVC\\BitkiTakipSystemMVC.csproj|c:\\users\\ozgok\\source\\repos\\bitkitakipsystemmvc\\bitkitakipsystemmvc\\models\\planttakipmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{5F16C532-4458-4604-9E0E-794D1AB8F4BE}|BitkiTakipSystemMVC\\BitkiTakipSystemMVC.csproj|solutionrelative:bitkitakipsystemmvc\\models\\planttakipmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_LayoutYonetici.cshtml",
+              "DocumentMoniker": "C:\\Users\\ozgok\\source\\repos\\BitkiTakipSystemMVC\\BitkiTakipSystemMVC\\Views\\Shared\\_LayoutYonetici.cshtml",
+              "RelativeDocumentMoniker": "BitkiTakipSystemMVC\\Views\\Shared\\_LayoutYonetici.cshtml",
+              "ToolTip": "C:\\Users\\ozgok\\source\\repos\\BitkiTakipSystemMVC\\BitkiTakipSystemMVC\\Views\\Shared\\_LayoutYonetici.cshtml",
+              "RelativeToolTip": "BitkiTakipSystemMVC\\Views\\Shared\\_LayoutYonetici.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-03T12:37:29.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_LayoutCalisan.cshtml",
+              "DocumentMoniker": "C:\\Users\\ozgok\\source\\repos\\BitkiTakipSystemMVC\\BitkiTakipSystemMVC\\Views\\Shared\\_LayoutCalisan.cshtml",
+              "RelativeDocumentMoniker": "BitkiTakipSystemMVC\\Views\\Shared\\_LayoutCalisan.cshtml",
+              "ToolTip": "C:\\Users\\ozgok\\source\\repos\\BitkiTakipSystemMVC\\BitkiTakipSystemMVC\\Views\\Shared\\_LayoutCalisan.cshtml",
+              "RelativeToolTip": "BitkiTakipSystemMVC\\Views\\Shared\\_LayoutCalisan.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-03T12:37:11.694Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\ozgok\\source\\repos\\BitkiTakipSystemMVC\\BitkiTakipSystemMVC\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "BitkiTakipSystemMVC\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\ozgok\\source\\repos\\BitkiTakipSystemMVC\\BitkiTakipSystemMVC\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "BitkiTakipSystemMVC\\Controllers\\LoginController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T11:37:01.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Assign.cshtml",
+              "DocumentMoniker": "C:\\Users\\ozgok\\source\\repos\\BitkiTakipSystemMVC\\BitkiTakipSystemMVC\\Views\\Yonetici\\Assign.cshtml",
+              "RelativeDocumentMoniker": "BitkiTakipSystemMVC\\Views\\Yonetici\\Assign.cshtml",
+              "ToolTip": "C:\\Users\\ozgok\\source\\repos\\BitkiTakipSystemMVC\\BitkiTakipSystemMVC\\Views\\Yonetici\\Assign.cshtml",
+              "RelativeToolTip": "BitkiTakipSystemMVC\\Views\\Yonetici\\Assign.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-03T11:21:16.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "YoneticiController.cs",
+              "DocumentMoniker": "C:\\Users\\ozgok\\source\\repos\\BitkiTakipSystemMVC\\BitkiTakipSystemMVC\\Controllers\\YoneticiController.cs",
+              "RelativeDocumentMoniker": "BitkiTakipSystemMVC\\Controllers\\YoneticiController.cs",
+              "ToolTip": "C:\\Users\\ozgok\\source\\repos\\BitkiTakipSystemMVC\\BitkiTakipSystemMVC\\Controllers\\YoneticiController.cs",
+              "RelativeToolTip": "BitkiTakipSystemMVC\\Controllers\\YoneticiController.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAQwCIAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T11:17:32.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "List.cshtml",
+              "DocumentMoniker": "C:\\Users\\ozgok\\source\\repos\\BitkiTakipSystemMVC\\BitkiTakipSystemMVC\\Views\\Yonetici\\List.cshtml",
+              "RelativeDocumentMoniker": "BitkiTakipSystemMVC\\Views\\Yonetici\\List.cshtml",
+              "ToolTip": "C:\\Users\\ozgok\\source\\repos\\BitkiTakipSystemMVC\\BitkiTakipSystemMVC\\Views\\Yonetici\\List.cshtml",
+              "RelativeToolTip": "BitkiTakipSystemMVC\\Views\\Yonetici\\List.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-03T11:17:56.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CalisanController.cs",
+              "DocumentMoniker": "C:\\Users\\ozgok\\source\\repos\\BitkiTakipSystemMVC\\BitkiTakipSystemMVC\\Controllers\\CalisanController.cs",
+              "RelativeDocumentMoniker": "BitkiTakipSystemMVC\\Controllers\\CalisanController.cs",
+              "ToolTip": "C:\\Users\\ozgok\\source\\repos\\BitkiTakipSystemMVC\\BitkiTakipSystemMVC\\Controllers\\CalisanController.cs",
+              "RelativeToolTip": "BitkiTakipSystemMVC\\Controllers\\CalisanController.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAkwE4AAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T11:15:43.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PlantTakipModel.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\ozgok\\source\\repos\\BitkiTakipSystemMVC\\BitkiTakipSystemMVC\\Models\\PlantTakipModel.edmx",
+              "RelativeDocumentMoniker": "BitkiTakipSystemMVC\\Models\\PlantTakipModel.edmx",
+              "ToolTip": "C:\\Users\\ozgok\\source\\repos\\BitkiTakipSystemMVC\\BitkiTakipSystemMVC\\Models\\PlantTakipModel.edmx [Diagram1]",
+              "RelativeToolTip": "BitkiTakipSystemMVC\\Models\\PlantTakipModel.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-06-03T10:44:20.529Z",
+              "EditorCaption": " [Diagram1]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

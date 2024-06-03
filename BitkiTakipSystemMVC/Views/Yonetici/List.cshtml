@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_LayoutYonetici.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="mb-3">
+        <h3>
+            For @ViewBag.locationAd Assigned Jobs
+        </h3>
+
+    </div>
+    @using (Html.BeginForm("List", "Yonetici", FormMethod.Post))
+    {
+        <div class="mb-3">
+            <select class="form-select" name="selectPer" id="selectPer">
+                @foreach (var personel in ViewBag.personel)
+                {
+                    <option value="@personel.PersonelId">@personel.PersonelAdSoyad</option>
+                }
+            </select>
+        </div>
+        <div class="mb-3" >
+            <button class="btn btn-outline-secondary" type="submit">Preview Assigned Jobs</button>
+        </div> 
+    }
+</div>
+

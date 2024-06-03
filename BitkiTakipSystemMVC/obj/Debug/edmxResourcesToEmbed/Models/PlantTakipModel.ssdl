@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PlantTakipDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AuthorizationTypes">
+    <Key>
+      <PropertyRef Name="authorizationId" />
+    </Key>
+    <Property Name="authorizationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="authorizationAd" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Locations">
+    <Key>
+      <PropertyRef Name="locationId" />
+    </Key>
+    <Property Name="locationId" Type="int" Nullable="false" />
+    <Property Name="locationAd" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Personels">
+    <Key>
+      <PropertyRef Name="PersonelId" />
+    </Key>
+    <Property Name="PersonelId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonelAdSoyad" Type="nchar" MaxLength="50" />
+    <Property Name="PersonelKullaniciAd" Type="nchar" MaxLength="50" />
+    <Property Name="PersonelParola" Type="nchar" MaxLength="50" />
+    <Property Name="PersonelLocationId" Type="int" />
+    <Property Name="PersonelAuthorizationId" Type="int" />
+  </EntityType>
+  <EntityType Name="Progress">
+    <Key>
+      <PropertyRef Name="progressId" />
+    </Key>
+    <Property Name="progressId" Type="int" Nullable="false" />
+    <Property Name="progressAd" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Works">
+    <Key>
+      <PropertyRef Name="worksId" />
+    </Key>
+    <Property Name="worksId" Type="int" Nullable="false" />
+    <Property Name="workName" Type="nvarchar(max)" />
+    <Property Name="workAciklama" Type="nvarchar(max)" />
+    <Property Name="workfarmerId" Type="int" />
+    <Property Name="iletilenTarih" Type="datetime" />
+    <Property Name="yapilanTarih" Type="datetime" />
+    <Property Name="workprogressId" Type="int" />
+  </EntityType>
+  <Association Name="FK_Personels_AuthorizationTypes">
+    <End Role="AuthorizationTypes" Type="Self.AuthorizationTypes" Multiplicity="0..1" />
+    <End Role="Personels" Type="Self.Personels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuthorizationTypes">
+        <PropertyRef Name="authorizationId" />
+      </Principal>
+      <Dependent Role="Personels">
+        <PropertyRef Name="PersonelAuthorizationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Personels_Locations">
+    <End Role="Locations" Type="Self.Locations" Multiplicity="0..1" />
+    <End Role="Personels" Type="Self.Personels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locations">
+        <PropertyRef Name="locationId" />
+      </Principal>
+      <Dependent Role="Personels">
+        <PropertyRef Name="PersonelLocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Works_Personels">
+    <End Role="Personels" Type="Self.Personels" Multiplicity="0..1" />
+    <End Role="Works" Type="Self.Works" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personels">
+        <PropertyRef Name="PersonelId" />
+      </Principal>
+      <Dependent Role="Works">
+        <PropertyRef Name="workfarmerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Works_Progress">
+    <End Role="Progress" Type="Self.Progress" Multiplicity="0..1" />
+    <End Role="Works" Type="Self.Works" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Progress">
+        <PropertyRef Name="progressId" />
+      </Principal>
+      <Dependent Role="Works">
+        <PropertyRef Name="workprogressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PlantTakipDbModelStoreContainer">
+    <EntitySet Name="AuthorizationTypes" EntityType="Self.AuthorizationTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Locations" EntityType="Self.Locations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Personels" EntityType="Self.Personels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Progress" EntityType="Self.Progress" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Works" EntityType="Self.Works" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Personels_AuthorizationTypes" Association="Self.FK_Personels_AuthorizationTypes">
+      <End Role="AuthorizationTypes" EntitySet="AuthorizationTypes" />
+      <End Role="Personels" EntitySet="Personels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Personels_Locations" Association="Self.FK_Personels_Locations">
+      <End Role="Locations" EntitySet="Locations" />
+      <End Role="Personels" EntitySet="Personels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Works_Personels" Association="Self.FK_Works_Personels">
+      <End Role="Personels" EntitySet="Personels" />
+      <End Role="Works" EntitySet="Works" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Works_Progress" Association="Self.FK_Works_Progress">
+      <End Role="Progress" EntitySet="Progress" />
+      <End Role="Works" EntitySet="Works" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

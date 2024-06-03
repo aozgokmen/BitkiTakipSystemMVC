@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PlantTakipDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AuthorizationTypes">
+          <Key>
+            <PropertyRef Name="authorizationId" />
+          </Key>
+          <Property Name="authorizationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="authorizationAd" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Locations">
+          <Key>
+            <PropertyRef Name="locationId" />
+          </Key>
+          <Property Name="locationId" Type="int" Nullable="false" />
+          <Property Name="locationAd" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Personels">
+          <Key>
+            <PropertyRef Name="PersonelId" />
+          </Key>
+          <Property Name="PersonelId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonelAdSoyad" Type="nchar" MaxLength="50" />
+          <Property Name="PersonelKullaniciAd" Type="nchar" MaxLength="50" />
+          <Property Name="PersonelParola" Type="nchar" MaxLength="50" />
+          <Property Name="PersonelLocationId" Type="int" />
+          <Property Name="PersonelAuthorizationId" Type="int" />
+        </EntityType>
+        <EntityType Name="Progress">
+          <Key>
+            <PropertyRef Name="progressId" />
+          </Key>
+          <Property Name="progressId" Type="int" Nullable="false" />
+          <Property Name="progressAd" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Works">
+          <Key>
+            <PropertyRef Name="worksId" />
+          </Key>
+          <Property Name="worksId" Type="int" Nullable="false" />
+          <Property Name="workName" Type="nvarchar(max)" />
+          <Property Name="workAciklama" Type="nvarchar(max)" />
+          <Property Name="workfarmerId" Type="int" />
+          <Property Name="iletilenTarih" Type="datetime" />
+          <Property Name="yapilanTarih" Type="datetime" />
+          <Property Name="workprogressId" Type="int" />
+        </EntityType>
+        <Association Name="FK_Personels_AuthorizationTypes">
+          <End Role="AuthorizationTypes" Type="Self.AuthorizationTypes" Multiplicity="0..1" />
+          <End Role="Personels" Type="Self.Personels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AuthorizationTypes">
+              <PropertyRef Name="authorizationId" />
+            </Principal>
+            <Dependent Role="Personels">
+              <PropertyRef Name="PersonelAuthorizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personels_Locations">
+          <End Role="Locations" Type="Self.Locations" Multiplicity="0..1" />
+          <End Role="Personels" Type="Self.Personels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Locations">
+              <PropertyRef Name="locationId" />
+            </Principal>
+            <Dependent Role="Personels">
+              <PropertyRef Name="PersonelLocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Works_Personels">
+          <End Role="Personels" Type="Self.Personels" Multiplicity="0..1" />
+          <End Role="Works" Type="Self.Works" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personels">
+              <PropertyRef Name="PersonelId" />
+            </Principal>
+            <Dependent Role="Works">
+              <PropertyRef Name="workfarmerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Works_Progress">
+          <End Role="Progress" Type="Self.Progress" Multiplicity="0..1" />
+          <End Role="Works" Type="Self.Works" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Progress">
+              <PropertyRef Name="progressId" />
+            </Principal>
+            <Dependent Role="Works">
+              <PropertyRef Name="workprogressId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PlantTakipDbModelStoreContainer">
+          <EntitySet Name="AuthorizationTypes" EntityType="Self.AuthorizationTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Locations" EntityType="Self.Locations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personels" EntityType="Self.Personels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Progress" EntityType="Self.Progress" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Works" EntityType="Self.Works" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Personels_AuthorizationTypes" Association="Self.FK_Personels_AuthorizationTypes">
+            <End Role="AuthorizationTypes" EntitySet="AuthorizationTypes" />
+            <End Role="Personels" EntitySet="Personels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personels_Locations" Association="Self.FK_Personels_Locations">
+            <End Role="Locations" EntitySet="Locations" />
+            <End Role="Personels" EntitySet="Personels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Works_Personels" Association="Self.FK_Works_Personels">
+            <End Role="Personels" EntitySet="Personels" />
+            <End Role="Works" EntitySet="Works" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Works_Progress" Association="Self.FK_Works_Progress">
+            <End Role="Progress" EntitySet="Progress" />
+            <End Role="Works" EntitySet="Works" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PlantTakipDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AuthorizationTypes">
+          <Key>
+            <PropertyRef Name="authorizationId" />
+          </Key>
+          <Property Name="authorizationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="authorizationAd" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Personels" Relationship="Self.FK_Personels_AuthorizationTypes" FromRole="AuthorizationTypes" ToRole="Personels" />
+        </EntityType>
+        <EntityType Name="Locations">
+          <Key>
+            <PropertyRef Name="locationId" />
+          </Key>
+          <Property Name="locationId" Type="Int32" Nullable="false" />
+          <Property Name="locationAd" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Personels" Relationship="Self.FK_Personels_Locations" FromRole="Locations" ToRole="Personels" />
+        </EntityType>
+        <EntityType Name="Personels">
+          <Key>
+            <PropertyRef Name="PersonelId" />
+          </Key>
+          <Property Name="PersonelId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonelAdSoyad" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="PersonelKullaniciAd" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="PersonelParola" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="PersonelLocationId" Type="Int32" />
+          <Property Name="PersonelAuthorizationId" Type="Int32" />
+          <NavigationProperty Name="AuthorizationTypes" Relationship="Self.FK_Personels_AuthorizationTypes" FromRole="Personels" ToRole="AuthorizationTypes" />
+          <NavigationProperty Name="Locations" Relationship="Self.FK_Personels_Locations" FromRole="Personels" ToRole="Locations" />
+          <NavigationProperty Name="Works" Relationship="Self.FK_Works_Personels" FromRole="Personels" ToRole="Works" />
+        </EntityType>
+        <EntityType Name="Progress">
+          <Key>
+            <PropertyRef Name="progressId" />
+          </Key>
+          <Property Name="progressId" Type="Int32" Nullable="false" />
+          <Property Name="progressAd" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Works" Relationship="Self.FK_Works_Progress" FromRole="Progress" ToRole="Works" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Works">
+          <Key>
+            <PropertyRef Name="worksId" />
+          </Key>
+          <Property Name="worksId" Type="Int32" Nullable="false" />
+          <Property Name="workName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="workAciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="workfarmerId" Type="Int32" />
+          <Property Name="iletilenTarih" Type="DateTime" Precision="3" />
+          <Property Name="yapilanTarih" Type="DateTime" Precision="3" />
+          <Property Name="workprogressId" Type="Int32" />
+          <NavigationProperty Name="Personels" Relationship="Self.FK_Works_Personels" FromRole="Works" ToRole="Personels" />
+          <NavigationProperty Name="Progress" Relationship="Self.FK_Works_Progress" FromRole="Works" ToRole="Progress" />
+        </EntityType>
+        <Association Name="FK_Personels_AuthorizationTypes">
+          <End Role="AuthorizationTypes" Type="Self.AuthorizationTypes" Multiplicity="0..1" />
+          <End Role="Personels" Type="Self.Personels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AuthorizationTypes">
+              <PropertyRef Name="authorizationId" />
+            </Principal>
+            <Dependent Role="Personels">
+              <PropertyRef Name="PersonelAuthorizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personels_Locations">
+          <End Role="Locations" Type="Self.Locations" Multiplicity="0..1" />
+          <End Role="Personels" Type="Self.Personels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Locations">
+              <PropertyRef Name="locationId" />
+            </Principal>
+            <Dependent Role="Personels">
+              <PropertyRef Name="PersonelLocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Works_Personels">
+          <End Role="Personels" Type="Self.Personels" Multiplicity="0..1" />
+          <End Role="Works" Type="Self.Works" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personels">
+              <PropertyRef Name="PersonelId" />
+            </Principal>
+            <Dependent Role="Works">
+              <PropertyRef Name="workfarmerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Works_Progress">
+          <End Role="Progress" Type="Self.Progress" Multiplicity="0..1" />
+          <End Role="Works" Type="Self.Works" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Progress">
+              <PropertyRef Name="progressId" />
+            </Principal>
+            <Dependent Role="Works">
+              <PropertyRef Name="workprogressId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PlantTakipDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AuthorizationTypes" EntityType="Self.AuthorizationTypes" />
+          <EntitySet Name="Locations" EntityType="Self.Locations" />
+          <EntitySet Name="Personels" EntityType="Self.Personels" />
+          <EntitySet Name="Progress" EntityType="Self.Progress" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Works" EntityType="Self.Works" />
+          <AssociationSet Name="FK_Personels_AuthorizationTypes" Association="Self.FK_Personels_AuthorizationTypes">
+            <End Role="AuthorizationTypes" EntitySet="AuthorizationTypes" />
+            <End Role="Personels" EntitySet="Personels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personels_Locations" Association="Self.FK_Personels_Locations">
+            <End Role="Locations" EntitySet="Locations" />
+            <End Role="Personels" EntitySet="Personels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Works_Personels" Association="Self.FK_Works_Personels">
+            <End Role="Personels" EntitySet="Personels" />
+            <End Role="Works" EntitySet="Works" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Works_Progress" Association="Self.FK_Works_Progress">
+            <End Role="Progress" EntitySet="Progress" />
+            <End Role="Works" EntitySet="Works" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PlantTakipDbModelStoreContainer" CdmEntityContainer="PlantTakipDbEntities">
+          <EntitySetMapping Name="AuthorizationTypes">
+            <EntityTypeMapping TypeName="PlantTakipDbModel.AuthorizationTypes">
+              <MappingFragment StoreEntitySet="AuthorizationTypes">
+                <ScalarProperty Name="authorizationId" ColumnName="authorizationId" />
+                <ScalarProperty Name="authorizationAd" ColumnName="authorizationAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Locations">
+            <EntityTypeMapping TypeName="PlantTakipDbModel.Locations">
+              <MappingFragment StoreEntitySet="Locations">
+                <ScalarProperty Name="locationId" ColumnName="locationId" />
+                <ScalarProperty Name="locationAd" ColumnName="locationAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personels">
+            <EntityTypeMapping TypeName="PlantTakipDbModel.Personels">
+              <MappingFragment StoreEntitySet="Personels">
+                <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+                <ScalarProperty Name="PersonelAdSoyad" ColumnName="PersonelAdSoyad" />
+                <ScalarProperty Name="PersonelKullaniciAd" ColumnName="PersonelKullaniciAd" />
+                <ScalarProperty Name="PersonelParola" ColumnName="PersonelParola" />
+                <ScalarProperty Name="PersonelLocationId" ColumnName="PersonelLocationId" />
+                <ScalarProperty Name="PersonelAuthorizationId" ColumnName="PersonelAuthorizationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Progress">
+            <EntityTypeMapping TypeName="PlantTakipDbModel.Progress">
+              <MappingFragment StoreEntitySet="Progress">
+                <ScalarProperty Name="progressId" ColumnName="progressId" />
+                <ScalarProperty Name="progressAd" ColumnName="progressAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="PlantTakipDbModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Works">
+            <EntityTypeMapping TypeName="PlantTakipDbModel.Works">
+              <MappingFragment StoreEntitySet="Works">
+                <ScalarProperty Name="worksId" ColumnName="worksId" />
+                <ScalarProperty Name="workName" ColumnName="workName" />
+                <ScalarProperty Name="workAciklama" ColumnName="workAciklama" />
+                <ScalarProperty Name="workfarmerId" ColumnName="workfarmerId" />
+                <ScalarProperty Name="iletilenTarih" ColumnName="iletilenTarih" />
+                <ScalarProperty Name="yapilanTarih" ColumnName="yapilanTarih" />
+                <ScalarProperty Name="workprogressId" ColumnName="workprogressId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

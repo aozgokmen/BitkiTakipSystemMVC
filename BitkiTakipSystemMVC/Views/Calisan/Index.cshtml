@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutCalisan.cshtml";
+}
+
+
+<style>
+    body {
+        text-align: center;
+    }
+
+    h2 {
+        color: #f00;
+        font-size: 25px;
+        background-color: #fff;
+        display: inline-block;
+        padding: 10px 20px;
+    }
+
+    .center-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: 630px;
+        object-fit: cover;
+    }
+</style>
+
+<h2>You are a personel for  @ViewBag.locationAd area</h2>
+@if (ViewBag.locationAd == "İstanbul                                          ")
+{
+    <img src="~/images/istanbul.jpg" alt="Istanbul Landscape" class="center-image" />
+}
+else
+{
+    <img src="~/images/ankara.jpg" alt="Ankara Landscape" class="center-image" />
+}

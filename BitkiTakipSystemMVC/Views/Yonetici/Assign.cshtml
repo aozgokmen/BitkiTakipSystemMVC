@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Assign";
+    Layout = "~/Views/Shared/_LayoutYonetici.cshtml";
+}
+
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                Job Assignment For @ViewBag.locationAd Area Personels
+            </div>
+            <div class="card-body">
+                @using (Html.BeginForm("Assign", "Yonetici", FormMethod.Post))
+                {
+             
+                <div class="mb-3">
+                    <label for="isBaslik" class="form-label">Enter Job name</label>
+                    <input type="text" class="form-control" id="isBaslik" name="isBaslik">
+                </div>
+                <div class="mb-3">
+                    <label for="isDescription" class="form-label">Enter Description</label>
+                    <input type="text" class="form-control" id="isDescription" name="isDescription">
+                </div>
+                <div class="mb-3">
+                    <label for="selectPer" class="form-label">Select Personel</label>
+                    <select class="form-select" name="selectPer" id="selectPer">
+                        @foreach (var item in ViewBag.personel)
+                        {
+                            <option value="@item.PersonelId">@item.PersonelAdSoyad</option>
+                        }
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-outline-primary" type="submit">Assign</button>
+
+                </div>
+                }
+            </div>
+
+        </div>
+
+    </div>
+
+
